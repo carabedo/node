@@ -263,8 +263,27 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/saludos/', function(req, res, next) {
-  res.render('saludos_template', { title: 'Creando Templates' });
+  res.render('saludos_vista', { title: 'Creando Vista' });
 });
 
 module.exports = router;
 ```
+Ahora nos falta crear la vista en la carpeta \views\ , creamos un archivo llamado `saludos_vista.jade` y copiamos esto:
+
+```
+extends layout
+
+block content
+  h1= title
+  p Bienvenido a mi primer vista en express usando pug como metalenguaje de HTML!
+  ul 
+    li me gusta
+    li voy entendiendo!
+```
+
+Para ver los cambios tenemos que cerrar el servidor con `crtl+c` y volverlo a levantar con `npm start`.
+
+### Creando rutas
+
+Recien modificamos una ruta, pero que pasa si queremos agregar una ruta al sitio, por ejemplo `\about` podemos probar de crear un archivo `about.js` en rutas y ver que no funciona. Lo que falta es agregarla en la `app.js`.
+
