@@ -54,3 +54,24 @@ Vemos en consola que nos dice que nuestro sitio esta en http://127.0.0.1:3000
 
 Lo que hicimos recien no es lo mas practico, vamos a usar una libreria para poder desarrollar nuestro sitio de una manera mas sencilla y productiva.
 
+```
+sudo npm install express-generator -g
+```
+
+Ahora vamos a crear nuestro primer proyecto de express:
+
+```
+express primer_proyecto
+```
+
+Esto genera una carpeta llamada `primer_proyecto` con todo lo necesario:
+
+```
+│   app.js      
+│   package.json          
+└───bin      
+└───public         
+└───routes     
+└───views              
+```
+
