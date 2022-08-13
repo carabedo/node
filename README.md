@@ -263,7 +263,7 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/saludos/', function(req, res, next) {
-  res.render('saludos', { title: 'Creando Templates' });
+  res.render('saludos_template', { title: 'Creando Templates' });
 });
 
 module.exports = router;
