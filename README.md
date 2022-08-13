@@ -287,3 +287,38 @@ Para ver los cambios tenemos que cerrar el servidor con `crtl+c` y volverlo a le
 
 Recien modificamos una ruta, pero que pasa si queremos agregar una ruta al sitio, por ejemplo `\about` podemos probar de crear un archivo `about.js` en rutas y ver que no funciona. Lo que falta es agregarla en la `app.js`.
 
+```js
+//agrego ruta y vista
+var aboutRouter = require('./routes/about');
+app.use('/about', aboutRouter);
+```
+Notemos que estamos linkeando la ruta `/about` de nuestro sitio con el router `about.js` de la carpeta `/routes/`. Este archivo `about.js` es el que finalmente renderea el template.
+
+```js
+// routes/about.js
+
+var express = require('express');
+var router = express.Router();
+
+/* GET users listing. */
+router.get('/', function(req, res, next) {
+  res.render('about', { title: 'Sobre nosotros' });
+});
+
+module.exports = router;
+```
+
+Por ultimo creamos el template `about.jade`:
+
+```pug
+extends layout
+
+block content
+  h1= title
+  p Bienvenido a mi primer ruta en express usando pug como metalenguaje de HTML!
+  ul 
+    li me gusta
+  img(src='https://picsum.photos/500/500')
+```
+
+Listo! Ya aprendimos a crear vistas, rutas y templates :) 
