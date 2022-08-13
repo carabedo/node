@@ -75,3 +75,20 @@ Esto genera una carpeta llamada `primer_proyecto` con todo lo necesario:
 └───views              
 ```
 
+Ingresemos en la carpeta del proyecto usando `cd primer_proyecto`, si intentamos levantar el servidor con `npm start` veremos un monton de errores, lo que sucede es que nuestro simple proyecto utiliza librerias de node que todavia no instalamos, para eso usamos:
+
+```
+npm install
+```
+Luego de haber instalado todo ya podemos levantar nuestro sitio con:
+
+```
+npm start
+```
+
+Vamos a http://127.0.0.1:3000:
+
+
+![](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/development_environment/express_default_screen.png)
+
+# Express 
