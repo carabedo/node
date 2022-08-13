@@ -154,6 +154,8 @@ Sencillo no?
 
 Ejemplo de lo que se puede hacer con pugjs:
 
+Con HTML:
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -177,7 +179,7 @@ Ejemplo de lo que se puede hacer con pugjs:
 ```
 Con pugjs:
 
-```
+```pug
 doctype html
 html(lang="en")
   head
