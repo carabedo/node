@@ -108,7 +108,7 @@ Vamos a http://127.0.0.1:3000:
 ![](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/development_environment/express_default_screen.png)
 
 # Vistas/Templates
-
+## Templates
 
 Express te permite configurar varios motores de vista/plantillas, incluidos EJS, Hbs, Pug (ahora llamado Jade), Twig y Vash, **Jade** es la opcion por default. Pero...que es una vista? Que es un template? Bueno si sabemos algo basico de web development vimos que podemos diseñar nuestras paginas con html css, luego le dimos interactividad con js, creando paginas super complejas! Pero todo eso estaba del lado del cliente, es decir estaba todo incluido el codigo en el navegador del usuario, hay veces que necesitamos realizar procedimientos del lado del servidor (pensemos en un sitio que maneja datos sensibles, homebanking, mails).
 
@@ -147,3 +147,65 @@ block content
     li me gusta
     li pero no entiendo mucho!
 ```
+
+Veamos http://127.0.0.1:3000
+
+Sencillo no?
+
+Ejemplo de lo que se puede hacer con pugjs:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Pug</title>
+    <script type="text/javascript">
+      if (foo) bar(1 + 5);
+    </script>
+  </head>
+  <body>
+    <h1>Pug - node template engine</h1>
+    <div id="container" class="col">
+      <p>You are amazing</p>
+      <p>
+        Pug is a terse and simple templating language with a strong focus on
+        performance and powerful features.
+      </p>
+    </div>
+  </body>
+</html>
+```
+Con pugjs:
+
+```
+doctype html
+html(lang="en")
+  head
+    title= pageTitle
+    script(type='text/javascript').
+      if (foo) bar(1 + 5);
+  body
+    h1 Pug - node template engine
+    #container.col
+      if youAreUsingPug
+        p You are amazing
+      else
+        p Get on it!
+      p.
+        Pug is a terse and simple templating language with a
+        strong focus on performance and powerful features.
+```
+
+Mas informacion sobre pugjs https://github.com/pugjs/pug
+
+## Rutas
+
+Veamos que hay en la carpeta `routes`:
+
+```
+ └───    /routes
+        └───index.js
+        └───users.js
+```
+
+Cada archivo representa la respuesta del servidor a http://127.0.0.1:3000/ y a http://127.0.0.1:3000/users/ respectivamente. 
