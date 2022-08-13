@@ -237,7 +237,7 @@ router.get('/', function(req, res, next) {
 
 Estamos definiendo un callback que se encarga de responder cuando nuestro servidor recibe un requests GET en `/`, cual es la respuesta? El output de la funcion render. Esta funcion renderea el template `index.jade` que vimos hace un rato y ademas al hacerlo usa la variable `title` con su valor `Express`.
 
-Para practicar cambiemos la respuesta en `\users`, vamos a `routers\users\`:
+Para practicar cambiemos la respuesta en `\users`, vamos a `routers\users.js`:
 
 ```js
 var express = require('express');
@@ -257,3 +257,14 @@ A la funcion get, le podemos agregar una ruta especifica `/saludos/` y en vez de
 
 Entonces quedaria asi:
 
+```js
+var express = require('express');
+var router = express.Router();
+
+/* GET users listing. */
+router.get('/saludos/', function(req, res, next) {
+  res.render('saludos', { title: 'Creando Templates' });
+});
+
+module.exports = router;
+```
