@@ -228,7 +228,7 @@ module.exports = router;
 
 Pongamos atencion a:
 
-```
+```js
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -239,7 +239,7 @@ Estamos definiendo un callback que se encarga de responder cuando nuestro servid
 
 Para practicar cambiemos la respuesta en `\users`, vamos a `routers\users\`:
 
-```
+```js
 var express = require('express');
 var router = express.Router();
 
