@@ -1,6 +1,6 @@
 # node
 
-## Instalacion:
+# Instalacion:
 
 Instalamos node 16.x en linux/wsl :
 
@@ -50,7 +50,7 @@ node hola.js
 
 Vemos en consola que nos dice que nuestro sitio esta en http://127.0.0.1:3000 
 
-### Express Framework
+# Express Framework
 
 Lo que hicimos recien no es lo mas practico, vamos a usar una libreria para poder desarrollar nuestro sitio de una manera mas sencilla y productiva.
 
