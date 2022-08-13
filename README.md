@@ -330,3 +330,76 @@ Listo! Ya aprendimos a crear vistas, rutas y templates :)
 # Static Files
 
 Vamos a crear el mismo proyecto que creamos para `django`, para eso vamos a necesitar reutilizar static files (css,html y js del front) y adaptar templates.
+
+En este caso como estamos adaptando un proyecto que hicimos con django, necesitamos adaptar el template `base.html` a la notacion de pug, vamos a usar una libreria que haga el trabajo sucio:
+
+```pug
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  title Portfolio de Proyectos 
+  // Estilos y fuentes del template
+  link(href="/vendor/bootstrap/css/bootstrap.min.css" rel='stylesheet')
+  link(href="/vendor/font-awesome/css/font-awesome.min.css" rel='stylesheet' type='text/css')
+  link(href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css')
+  link(href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css')
+  link(href="/stylesheets/clean-blog.min.css" rel='stylesheet')
+// Navegación
+nav#mainNav.navbar.navbar-expand-lg.navbar-light.fixed-top
+  .container
+    a.navbar-brand(href="/") Portafolio de proyectos
+    button.navbar-toggler.navbar-toggler-right(type='button' data-toggle='collapse' data-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation') Menu
+      i.fa.fa-bars
+    #navbarResponsive.collapse.navbar-collapse
+      ul.navbar-nav.ml-auto
+        li.nav-item
+          a.nav-link(href="/") Home
+        li.nav-item
+          a.nav-link(href="/about/") Quienes Somos
+        li.nav-item
+          a.nav-link(href="/portfolio/") Portfolio
+        li.nav-item
+          a.nav-link(href="/contact/") Contacto
+
+
+
+// Cabecera
+block header
+header.masthead(style="background-image: url('/images/home-bg.jpg')")
+  .overlay
+  .container
+    .row
+      .col-lg-8.col-md-10.mx-auto
+        .site-heading
+            block headers
+// Contenido
+block content
+// Pié de página
+footer
+  .container
+    .row
+      .col-lg-8.col-md-10.mx-auto
+        ul.list-inline.text-center
+          li.list-inline-item
+            a(href='#')
+              span.fa-stack.fa-lg
+                i.fa.fa-circle.fa-stack-2x
+                i.fa.fa-envelope.fa-stack-1x.fa-inverse
+          li.list-inline-item
+            a(href='#')
+              span.fa-stack.fa-lg
+                i.fa.fa-circle.fa-stack-2x
+                i.fa.fa-github.fa-stack-1x.fa-inverse
+          li.list-inline-item
+            a(href='#')
+              span.fa-stack.fa-lg
+                i.fa.fa-circle.fa-stack-2x
+                i.fa.fa-youtube.fa-stack-1x.fa-inverse
+        p.copyright.text-muted Copyright &copy; 2022 &middot; 
+
+// Bootstrap y Javascripts
+script(src="/vendor/jquery/jquery.min.js")
+script(src="/vendor/bootstrap/js/bootstrap.bundle.min.js")
+script(src="/javascripts/clean-blog.min.js")
+```
