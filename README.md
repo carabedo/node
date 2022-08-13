@@ -116,4 +116,34 @@ Generalmente los datos del sitio con miles de usuarios se guardan en bases de da
 
 Esta es la finalidad de las templates y las vistas, las vistas podemos pensarlas como funciones que administran las peticiones del cliente y permiten generar a partir de templates el codigo html que se enviara al navegador. Incluso estas vistas pueden hacer consultas a la base de datos e incluirlas en el html de respuesta al cliente.
 
+Miremos la carpeta `primer_proyecto\views` vemos que hay tres archivos:
 
+```
+└───    /views
+        └───error.pug
+        └───index.pug
+        └───layout.pug
+```
+
+Si abrimos `index.pug`
+
+```
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+```
+
+Estamos viendo una plantilla que usa `pug` un metalenguaje que nos permite crear html de una manera mas sencilla, notar que esta template extiende una plantilla llamada layout, tambien vemos que dentro de una identacion estamos maquetando html. Hay una variable asiganda a una etiqueta `h1` y luego esta misma variable es insertada en un texto asociado a otra etiqueta `p`. Cambiemos el texto:
+
+```
+extends layout
+
+block content
+  h1= title
+  p Bienvenido a mi primer_proyecto en node usando #{title} y pug como metalenguaje de HTML!
+  ul 
+    li me gusta
+    li pero no entiendo mucho!
+```
