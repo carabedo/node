@@ -321,4 +321,10 @@ block content
   img(src='https://picsum.photos/500/500')
 ```
 
+Para poder ver la ruta nueva debemos reiniciar el servidor.
+
 Listo! Ya aprendimos a crear vistas, rutas y templates :) 
+
+# Static Files
+
+Vamos a crear el mismo proyecto que creamos para `django`, para eso vamos a necesitar reutilizar static files (css,html y js del front) y adaptar templates.
