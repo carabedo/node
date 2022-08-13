@@ -211,3 +211,49 @@ Veamos que hay en la carpeta `routes`:
 ```
 
 Cada archivo representa la respuesta del servidor a http://127.0.0.1:3000/ y a http://127.0.0.1:3000/users/ respectivamente. 
+
+Veamos `index.js`:
+
+```
+var express = require('express');
+var router = express.Router();
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
+
+module.exports = router;
+```
+
+Pongamos atencion a:
+
+```
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
+```
+
+Estamos definiendo un callback que se encarga de responder cuando nuestro servidor recibe un requests GET en `/`, cual es la respuesta? El output de la funcion render. Esta funcion renderea el template `index.jade` que vimos hace un rato y ademas al hacerlo usa la variable `title` con su valor `Express`.
+
+Para practicar cambiemos la respuesta en `\users`, vamos a `routers\users\`:
+
+```
+var express = require('express');
+var router = express.Router();
+
+/* GET users listing. */
+router.get('/', function(req, res, next) {
+  res.send('respond with a resource');
+});
+
+module.exports = router;
+```
+
+Cambiemos un par de cosas:
+
+A la funcion get, le podemos agregar una ruta especifica `/saludos/` y en vez de responder con un string, vamos a renderear un template. 
+
+Entonces quedaria asi:
+
