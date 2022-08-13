@@ -26,6 +26,10 @@ app.use('/users', usersRouter);
 //agrego ruta y vista
 var aboutRouter = require('./routes/about');
 app.use('/about', aboutRouter);
+var contactRouter = require('./routes/contact');
+app.use('/contact', contactRouter);
+var portfolioRouter = require('./routes/portfolio');
+app.use('/portfolio', portfolioRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
