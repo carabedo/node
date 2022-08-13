@@ -270,7 +270,7 @@ module.exports = router;
 ```
 Ahora nos falta crear la vista en la carpeta \views\ , creamos un archivo llamado `saludos_vista.jade` y copiamos esto:
 
-```
+```pug
 extends layout
 
 block content
