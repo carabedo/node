@@ -323,6 +323,8 @@ block content
 
 Para poder ver la ruta nueva debemos reiniciar el servidor.
 
+http://127.0.0.1:3000/about/ 
+
 Listo! Ya aprendimos a crear vistas, rutas y templates :) 
 
 # Static Files
