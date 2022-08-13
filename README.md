@@ -68,27 +68,26 @@ Esto genera una carpeta llamada `primer_proyecto` con todo lo necesario:
 
 ```
 
-express-locallibrary-tutorial
- └───   app.js
- └───   /bin
-        └─── www
- └───   package.json
- └───   package-lock.json
- └───   /node_modules
+primer_proyecto
+ └───app.js
+ └───bin
+      └─── www
+ └───package.json
+ └───node_modules
         └───[about 6700 subdirectories and files]
- └───   /public
- └───   /images
- └───   /javascripts
- └───   /stylesheets
-        └───style.css
- └───    /routes
-        └───index.js
-        └───users.js
-└───    /views
-        └───error.pug
-        └───index.pug
-        └───layout.pug
-        
+ └───public
+      └─── images
+      └─── javascripts
+      └─── stylesheets
+            └───style.css
+└───routes
+      └───index.js
+      └───users.js
+└───views
+      └───error.pug
+      └───index.pug
+      └───layout.pug
+
 ```
 
 Ingresemos en la carpeta del proyecto usando `cd primer_proyecto`, si intentamos levantar el servidor con `npm start` veremos un monton de errores, lo que sucede es que nuestro simple proyecto utiliza librerias de node que todavia no instalamos, para eso usamos:
