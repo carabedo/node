@@ -402,3 +402,13 @@ script(src="/vendor/jquery/jquery.min.js")
 script(src="/vendor/bootstrap/js/bootstrap.bundle.min.js")
 script(src="/javascripts/clean-blog.min.js")
 ```
+# Base de datos
+
+En nodejs es muy comun usar mongoDB, pero nosotros vamos a usar la base que ya tenemos, una base Postgresql, para esto necesitamos agregar una libreria que nos permita conectarnos:
+
+````
+npm -i pg
+```
+
+Ahora necesitamos la URL de la base, este tutorial asume que ya hiciste el proyecto en django y creaste una db en heroku, si no lo hiciste podes crearte una nueva.
+

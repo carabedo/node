@@ -31,6 +31,20 @@ app.use('/contact', contactRouter);
 var portfolioRouter = require('./routes/portfolio');
 app.use('/portfolio', portfolioRouter);
 
+
+const { pool } = require('./pg');
+
+// ruta db
+app.get('/participantes', async (req,res) => {
+  const result = await pool.query(`SELECT * FROM participantes`)
+  res.send(
+    {
+      message: result.rows
+    }
+  )
+})
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

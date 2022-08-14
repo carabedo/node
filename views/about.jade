@@ -3,9 +3,10 @@ block headers
     h1 Nosotros
     span Conoce mas acerca de nosotros
 block content
-  h1= title
-  p Bienvenido a mi primer ruta en express usando pug como metalenguaje de HTML!
-  ul 
-    li me gusta
-  img(src='https://picsum.photos/500/500')
+  ul
+    each itemlista in participantes
+      .col-lg-5.col-md-3.offset-lg-3.offset-md-4
+        h2.section-heading.title #{itemlista.name} #{itemlista.last_name}
+        p Equipo: #{itemlista.team}
+        p Proyecto: #{itemlista.proyect_id}
   
